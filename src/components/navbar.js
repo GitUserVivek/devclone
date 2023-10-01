@@ -8,10 +8,14 @@ import { Button, FilledButton, LinkText, UserProfilePhoto } from "./components";
 
 const NavBar = () => {
   let { state, setState } = useContext(AppContext);
-  let { loginStatus, currentPath } = state;
+  let { loginStatus } = state;
+  let [currentPath, setCurrentPath] = useState(state?.currentPath);
   const [openMenue, setOpenMenue] = useState(false);
   let navigateTo = useNavigate();
-  useEffect(() => {}, [openMenue]);
+  useEffect(() => {
+    setCurrentPath(state?.currentPath);
+    console.log("the path", currentPath);
+  }, [openMenue, state?.currentPath]);
   return (
     <div className="navbar">
       <div className="nav">
@@ -409,10 +413,12 @@ let CreatePost = () => {
     blog: "",
     userId: null,
   });
-  let userId = newPost.userId;
+  let userId = state.user?._id;
   useEffect(() => {
     newPost.userId = state.user?._id;
-  }, [state, state.loginStatus, newPost, setState]);
+    console.log(state);
+    console.log(userId);
+  }, [state, state.loginStatus, state?.currentPath, newPost.userId]);
   let ref = useRef("file");
   return (
     <>

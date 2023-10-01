@@ -22,6 +22,7 @@ let App = memo(() => {
   let location = useLocation();
   let { state, setState } = useContext(AppContext);
   useEffect(() => {
+    state.currentPath = location.pathname;
     if (!state?.user) {
       let token = Cookies.get("thedev");
       if (token) {
@@ -30,7 +31,7 @@ let App = memo(() => {
             axios.post(loginUrl, { token }).then(async (res) => {
               userData = res.data;
               if (userData !== null) {
-                state.currentPath = location.pathname;
+                console.log("this is currentPath", state.currentPath);
                 setState({
                   ...state,
                   loginStatus: true,
@@ -46,6 +47,9 @@ let App = memo(() => {
         scrollToTop();
         getData();
       }
+    } else {
+      setState({ ...state, currentPath: location.pathname });
+      console.log(state.currentPath);
     }
     // eslint-disable-next-line
   }, [location.pathname]);
