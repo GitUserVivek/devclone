@@ -4,7 +4,7 @@ import { useContext, useEffect, useState, memo } from "react";
 import { useLocation } from "react-router";
 import { getSingleUsersUrl } from "../../endpoints";
 import AppContext from "../context/appContext";
-import { getUserPosts } from "../utils/apiCalls";
+import { getSinglePost, getUserPosts } from "../utils/apiCalls";
 import {
   CommentsComponent,
   ComponentNotFound,
@@ -111,19 +111,22 @@ let UserProfile = memo(() => {
 let UserPost = memo(() => {
   let location = useLocation();
   let username = location.pathname.split("/")[2];
-  let postTitle = location.pathname.split("/")[3].replaceAll("-", " ");
+  let postId = location.pathname.split("/")[3].replaceAll("-", " ");
   let [currentPost, setCurrntPost] = useState({});
   let [allPosts, setAllPosts] = useState([]);
   let [apiDone, setApiDone] = useState(false);
   useEffect(() => {
-    getUserPosts({ username }).then((val) => {
-      setAllPosts(val);
+    getSinglePost({ postId }).then((val) => {
+      // setAllPosts(val);
+      console.log({ val });
+      setCurrntPost(val);
       setApiDone(true);
     });
+
     // eslint-disable-next-line
-    currentPost = allPosts?.find((post) => post.title === postTitle);
-    setCurrntPost({ ...currentPost });
-  }, [allPosts?.length, postTitle, apiDone]);
+    // currentPost = allPosts?.find((post) => post.title === postTitle);
+    // setCurrntPost({ ...currentPost });
+  }, [allPosts?.length, postId, apiDone]);
   return (
     <div className="userPostPage">
       {apiDone ? (

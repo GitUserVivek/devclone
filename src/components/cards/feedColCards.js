@@ -87,7 +87,8 @@ const Post = ({
       <span className="postTitle">
         <NavLink
           className={"noDecoratioin"}
-          to={"/user/" + user.username + "/" + title.replaceAll(" ", "-")}
+          // to={"/user/" + user.username + "/" + title.replaceAll(" ", "-")}
+          to={"/user/" + user.username + "/" + postId}
         >
           {title}
         </NavLink>

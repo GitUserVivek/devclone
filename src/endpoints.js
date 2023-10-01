@@ -23,6 +23,7 @@ const deleteReplyCommentPostUrl = `${host}/deleteReplyComment`;
 const getAllUsersUrl = `${host}/getAll`;
 const getSingleUsersUrl = `${host}/getSingleUser`;
 const getAllPostsUrl = `${host}/getAllPosts`;
+const getSinglePostUrl = `${host}/getSinglePost`;
 const getUserPostsUrl = `${host}/getUserPost`;
 
 export {
@@ -40,6 +41,7 @@ export {
   getAllUsersUrl,
   getSingleUsersUrl,
   getAllPostsUrl,
+  getSinglePostUrl,
   getUserPostsUrl,
   updateUserDetails,
 };

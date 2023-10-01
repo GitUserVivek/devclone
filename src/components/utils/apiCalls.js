@@ -7,6 +7,7 @@ import {
   deletePostUrl,
   deleteReplyCommentPostUrl,
   followUrl,
+  getSinglePostUrl,
   getUserPostsUrl,
   likeCommentPostUrl,
   loginUrl,
@@ -95,10 +96,13 @@ let postPost = async ({ newPost }) => {
 let scrollToTop = () => {
   document.getElementsByTagName("body")[0].scrollTo(0, 0);
 };
-let getPost = async ({ postTitle }) => {
-  if (postTitle) {
-    await axios.post(createPostUrl, { postTitle });
+let getSinglePost = async ({ postId }) => {
+  if (postId) {
+    console.log(postId);
+    let data = await axios.post(getSinglePostUrl, { postId });
+
     scrollToTop();
+    return data?.data?.posts[0];
   }
 };
 let followUser = async ({ to_id, state, setState }) => {
@@ -191,7 +195,7 @@ export default tryLogin;
 export {
   postPost,
   scrollToTop,
-  getPost,
+  getSinglePost,
   followUser,
   unfollowUser,
   tryRegister,
