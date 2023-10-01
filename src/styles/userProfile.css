@@ -1,0 +1,227 @@
+.userProfilePage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.userProfilePage .profileCoverBg {
+    background-color: rebeccapurple;
+    height: 8rem;
+    width: 100%;
+}
+
+.userProfilePage .content {
+    word-wrap: break-word;
+    width: 65rem;
+    position: relative;
+    top: -3rem;
+    border-radius: var(--borderRadius);
+}
+
+.userWorks {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    justify-content: space-between;
+    padding: var(--defaultPadding);
+    box-sizing: border-box;
+}
+
+.userWorks .userProfileActivities {
+    /* flex: 2; */
+    width: 30%;
+}
+
+.userWorks .userProfilePosts {
+    width: 65%;
+}
+
+.post .reactionsAndComments .delete .deleteSpan {
+    background-color: rgb(213, 35, 35);
+    border-radius: var(--borderRadius);
+    color: white;
+}
+
+.post .reactionsAndComments .delete .deleteSpan:hover {
+    background-color: rgb(166, 27, 27);
+}
+
+/* 
+ */
+.userPostPage .content {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.userPostPage .content .reactionsCol {
+    width: 5%;
+    height: 20%;
+}
+
+.userPostPage .singlePost {
+    width: 65%;
+
+}
+
+
+.userPostPage .content .userInfoCol {
+    width: 25%;
+    height: 50%;
+}
+
+.singlePostblog {
+    padding: 3rem;
+}
+
+.commentsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.commentsSection .commentsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 3rem;
+    box-sizing: border-box;
+
+}
+
+.commentsSection .commentsHeader span {
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--fontSecondary);
+}
+
+.commentsBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.commentsSection .commentComponent {
+    display: flex;
+}
+
+.commentsSection .commentComponent .commentEditor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.commentsSection .commentComponent .commentEditor .commentWriter {
+    border-radius: var(--borderRadius);
+    resize: none;
+    min-height: 4rem;
+    margin: 0 0 var(--defaultPadding) 0;
+    cursor: text;
+    padding: 0.5rem;
+    font-size: large;
+    outline: none;
+    box-sizing: border-box;
+    border: solid 1px gray;
+
+}
+
+.commentsSection .commentComponent .commentEditor .commentWriter:focus {
+    border: solid 2px var(--defaultBorderColor);
+    transition: 10ms;
+}
+
+.commentWriterActions {
+    display: flex;
+    justify-content: space-around;
+    width: fit-content;
+}
+.commentWriterActions *{
+    margin: 0 var(--smallMargin)  ;
+}
+
+.commentsSection .commentComponent .userProfilePhoto {
+    margin-right: var(--defaultPadding);
+    justify-self: flex-start;
+}
+
+/*  */
+.commentsBody .singleComment ,.replies {
+    display: flex;
+    align-items: flex;
+    justify-content: space-around;
+    padding: var(--defaultPadding) 0; 
+}
+
+.commentsBody .singleComment .comment {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+
+.commentsBody .singleComment .comment .commentMessage {
+    border: solid 1px lightgray;
+    border-radius: var(--borderRadius); 
+    display: flex;
+    flex-direction: column; 
+    padding: var(--defaultPadding);
+}
+.comment_username{
+    margin: 0 0 var(--smallMargin)  0 ;
+    color: var(--fontSecondary);
+    font-weight: 600;
+    display: flex;
+     align-items: center;
+}
+.comment_username .dateTime{
+    font-weight: 400; 
+    margin: 0 var(--borderRadius)  0  var(--borderRadius) ;
+    
+} 
+.commentsBody .singleComment .comment .singleCommentsActions {  
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.commentsBody .singleComment .comment .singleCommentsActions * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem;
+    /* justify-content: center; */
+
+}
+
+.commentsBody .singleComment .commentLike ,.commentReact {
+    padding: 0.1rem var(--smallPadding) ;
+    border-radius: var(--borderRadius);
+}
+.commentsBody .singleComment .commentLike  .material-icons{
+    color: var(--faintRed);
+}
+.commentsBody .singleComment .commentLike:hover , .commentReact:hover{
+    background-color: var(--faintGray);
+}
+.commentsBody .singleComment .liked{
+    background-color: var(--faintPink);
+    
+}
+
+.replies{  
+width: 100%;
+margin-left: var(--defaultMargin);
+display: flex;
+flex-direction: column;
+}

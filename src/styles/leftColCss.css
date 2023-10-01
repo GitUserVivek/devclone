@@ -1,0 +1,116 @@
+/* left col part.. */
+.leftCol {
+    color: white;
+    float: left;
+    width: 20%;
+    margin: 1rem;
+}
+
+.welcomeCard {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: var(--borderRadius);
+    color: var(--fontSecondary);
+    font-size: 16px !important;
+    padding: var(--defaultPadding);
+    line-height: 1.5;
+}
+
+.welcomeCard * {
+    margin: 0.2rem 0rem 0.2rem 0rem;
+}
+
+.welcomeCard .welcomeDesc {
+    color: black;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.welcomeCard .communitySpan {
+    color: var(--primary);
+}
+
+.verticalNavbar {
+    margin-top: var(--defaultPadding);
+    display: flex;
+    flex-direction: column;
+}
+
+.verticalNavbar .SocialMedias {
+    display: flex !important;
+    margin: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.verticalNavbar .SocialMedias * {
+    height: 1rem;
+    width: 1rem;
+}
+
+.verticalNavbar .SocialMedias a {
+    padding: 0.8rem;
+}
+
+.LinkText {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: medium;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.LinkText img {
+    height: 1rem;
+    margin-right: 0.5rem;
+
+}
+
+.tagsCard {
+    margin: 0.5rem;
+    height: 20rem;
+    overflow: scroll;
+}
+
+.imageCard {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    background-color: white;
+    border-radius: var(--borderRadius);
+    padding: 1rem;
+    margin: 1rem 0rem;
+}
+
+.imageCard img {
+    height: 6rem;
+    width: 100%;
+    border-radius: var(--borderRadius);
+}
+
+.imageCard .title {
+    width: 100% !important;
+    font-size: x-large;
+    color: var(--fontSecondary);
+    font-weight: bold;
+    text-align: left;
+}
+
+
+.imageCard .subTitle {
+    width: 100% !important;
+    font-size: medium;
+    color: var(--fontSecondary);
+    font-weight: bold;
+    text-align: left;
+    color: var(--primary);
+}

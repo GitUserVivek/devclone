@@ -1,0 +1,565 @@
+:root {
+  --primary: #3b49df;
+  --secondary: rgba(59, 73, 223, 0.1);
+  --body: rgb(245, 245, 245, 1);
+  --borderRadius: 0.5rem;
+  --defaultPadding: 1rem;
+  --defaultMargin: 1rem;
+  --defaultBorderColor: #a3a3a3;
+  --fontSecondary: rgb(64, 64, 64);
+  --smallPadding: 0.5rem;
+  --smallMargin: 0.5rem;
+  --faintGray: #f6f6f6;
+  --faintPink: #fbe9e9;
+  --buttonBackGray: #bdbdbd;
+  --faintRed: #dc2626;
+  --defaultWidth: 80rem;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+b {
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 3.5rem;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 0px 2px black;
+  z-index: 1;
+  overflow: visible;
+}
+
+.content_Post {
+  width: 85rem;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0px var(--defaultPadding);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 85rem;
+  align-items: center;
+}
+
+.nav-left {
+  margin: 0.5rem 3rem;
+  display: flex;
+  align-items: center;
+  width: 35%;
+}
+
+.nav-left .logo {
+  display: flex;
+}
+
+.nav-left .burgerIcon {
+  background-color: lightgray;
+  height: 2rem;
+  margin: 0px 0.4rem;
+  width: 2rem;
+  display: none;
+}
+
+.nav-right {
+  margin: 0.5rem 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 18%;
+  height: 3.5rem;
+}
+
+.nav-right .userDetails .userProfilePhoto,
+.commentsBody .commentComponent .userProfilePhoto,
+.commentsBody .singleComment .userProfilePhoto {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-position: center !important;
+  background-size: contain !important;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: solid 1px gray;
+}
+
+.nav-right .userDetails {
+  position: relative;
+  height: 15rem;
+  top: 6.5rem;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.nav-right .userDetails .userProfile:hover {
+  box-shadow: 0px 0px 5px var(--primary);
+}
+
+.nav-right .userDetailsMenue {
+  position: fixed;
+  background: white;
+  padding: var(--smallPadding);
+  border-radius: var(--borderRadius);
+  box-shadow: 0 0 5px black;
+  width: 12rem;
+  top: 4rem;
+}
+
+.nav-right .userDetailsMenue * {
+  font-weight: normal;
+  padding: 0.8rem;
+}
+
+.nav-right .userDetailsMenue .divider {
+  height: 1px;
+  background-color: lightgray;
+  width: 94%;
+  margin: auto;
+  padding: 0;
+}
+
+.nav-right .LinkText img {
+  height: 1.5rem;
+}
+
+.nav-left img {
+  height: 2.5rem;
+  background: transparent;
+}
+
+.nav-left span {
+  width: 100%;
+  display: flex;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.nav-left span .searchBar {
+  margin-left: 0.5rem;
+  font-size: medium;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+  width: 100%;
+  border: 0.1rem solid lightgray;
+}
+
+.nav-left span .searchInputLogo,
+.nav-right .searchInputLogo {
+  height: 1.5rem;
+  position: relative;
+  right: 2rem;
+}
+
+.nav-right .searchInputLogo {
+  display: none;
+  right: 0;
+  height: 50%;
+  margin: 0.5rem;
+}
+
+.nav-left .searchBar:focus {
+  outline: solid var(--primary) 1px;
+}
+
+.loginButton {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-size: medium;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.loginButton:hover,
+.LinkText:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.registerButton {
+  border: solid var(--primary) 1px;
+  color: var(--primary);
+  border-radius: 0.4rem;
+  background-color: transparent;
+  padding: 0.5rem;
+  font-size: medium;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.registerButton:hover {
+  background: var(--primary);
+  color: white;
+  text-decoration: underline;
+}
+
+.ComponentNotFound {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 3rem;
+}
+
+.ComponentNotFound .component404 {
+  border: 25px solid rgb(54, 55, 124);
+  border-radius: var(--defaultPadding);
+  height: 15rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.ComponentNotFound .component404 img {
+  height: 15rem;
+}
+
+/* 
+
+
+
+*/
+.createPostPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.createPost::-webkit-scrollbar {
+  display: none;
+}
+.createPost {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  height: 80vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.createPost .postWorkspace::-webkit-scrollbar {
+  display: none;
+}
+
+.createPost .postWorkspace {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  align-items: flex-start;
+  margin: var(--defaultMargin);
+  justify-content: flex-start;
+  width: 50%;
+  height: fit-content;
+  overflow-y: scroll;
+  width: fit-content;
+}
+
+.filledButton {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.6rem var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+}
+
+.filledButton:hover {
+  background-color: rgb(47, 58, 178);
+}
+.filledButton .buttonIcon {
+  height: 20px;
+  margin: 0 10px;
+}
+.borderButton {
+  background: white;
+  color: var(--fontSecondary);
+  padding: 0.6rem var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  text-decoration: none;
+  font-weight: bold;
+  border: solid 2px lightgray;
+}
+
+.borderButton:hover {
+  border: solid 2px gray;
+  transition: 0.2s;
+}
+
+.createPost .postWorkspace .addCoverImageButton {
+  border-radius: var(--borderRadius);
+  border: solid 2px lightgray;
+  padding: 0.5rem;
+  font-weight: 500;
+  color: var(--fontSecondary);
+}
+
+.createPost .postWorkspace * {
+  margin: var(--defaultMargin);
+}
+
+.createPost .postWorkspace .titleInput::placeholder {
+  color: var(--fontSecondary);
+  font-weight: bolder;
+}
+
+.createPost .postWorkspace .titleInput {
+  font-weight: bold;
+  font-size: 3rem;
+  border-radius: var(--borderRadius);
+  box-sizing: border-box;
+  padding: 0 var(--defaultPadding);
+  width: 95%;
+  resize: none;
+  outline: none;
+  border: none;
+}
+.createPost .postWorkspace .singleTag {
+  background-color: var(--body);
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  padding: 0.4rem;
+  border-radius: var(--borderRadius);
+}
+.createPost .postWorkspace .singleTag span:hover {
+  color: red;
+  cursor: pointer;
+}
+.createPost .postWorkspace .singleTag span {
+  margin: 0 0.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.createPost .postWorkspace .tags_post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+.createPost .postWorkspace .tags_post input {
+  padding: var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  width: 95%;
+  box-sizing: border-box;
+  font-size: large;
+  margin: 0;
+
+  border: none;
+  outline: none;
+}
+
+.editorTab {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--body);
+}
+
+.editorTab .left_pan {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.editorTab .left_pan .editorTab_tool {
+  display: inline-block;
+  border: solid 1px black;
+  height: 1rem;
+  width: 1rem;
+}
+
+.editorTab .right_pan .editorTab_more {
+  display: inline-block;
+  border: solid 1px black;
+  height: 1rem;
+  width: 1rem;
+}
+
+.blogWriter {
+  resize: none;
+  border-radius: var(--borderRadius);
+  border: none;
+  outline: none;
+  padding: var(--defaultPadding);
+  width: 95%;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: medium;
+  font-family: Courier, monospace;
+}
+
+.createPost .postGuide * {
+  word-wrap: break-word;
+  width: 100%;
+  margin: 1rem;
+}
+.createPost .postGuide {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.postActions {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  justify-self: center;
+  width: 80%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.postActions *:hover {
+  text-decoration: none;
+}
+
+/*    UserProfilePage         */
+
+.userProfileCard {
+  background-color: white;
+  height: 20rem;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.userProfileCard .profileHeader {
+  height: 45%;
+  width: 100%;
+  position: relative;
+  top: -4rem;
+  display: flex;
+}
+
+.userProfileCard .profileHeader .imageAndbuttons {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: 42%;
+}
+
+.userProfileCard .profileHeader .profileImage {
+  height: 7rem;
+  width: 7rem;
+  padding: 0.5rem;
+  background-color: rebeccapurple;
+  border-radius: 50%;
+}
+
+.userProfileCard .profileHeader .imageAndbuttons * {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.userProfileCard .profileHeader .imageAndbuttons *:hover {
+  text-decoration: none;
+}
+
+.userProfileCard .profileHeader .imageAndbuttons .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userProfileCard .userDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 var(--defaultPadding);
+  line-height: 2.5rem;
+}
+
+.userProfileCard .userDetails .userName {
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+.defaultError {
+  color: red !important;
+  width: fit-content;
+
+  justify-self: center;
+  margin: auto;
+  padding: var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  border: solid 1px rgba(255, 0, 0, 0.336);
+  display: none;
+}
+.inputWithLable {
+  margin: var(--defaultMargin) 0;
+  display: flex;
+  flex-direction: column;
+}
+.inputWithLable input {
+  width: 95%;
+  font-size: medium;
+  box-sizing: border-box;
+  border-radius: var(--borderRadius);
+  border: var(--defaultBorderColor) solid 1px;
+  padding: var(--smallPadding);
+  margin: var(--smallMargin) 0;
+  outline: none;
+}
+.inputWithLable input:focus {
+  border: var(--primary) solid;
+  box-sizing: border-box;
+}
+.inputLable {
+  font-size: medium !important   ;
+  font-weight: bold !important   ;
+  margin: 0 !important   ;
+  padding: 0 !important;
+}
+.fullWidthButton {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,106 @@
+@media screen and (max-width:450px) {
+    .navbar {
+        z-index: 1
+    }
+
+    .nav * {
+        margin: 0;
+    }
+
+    .nav-left {
+        width: 50%;
+        padding-left: 0.8rem;
+    }
+
+    .nav .nav-left span {
+        display: none;
+    }
+
+    .nav .nav-right .loginButton {
+        display: none;
+    }
+
+    .nav .nav-right {
+        width: 50%;
+        justify-content: flex-end;
+        margin-right: var(--defaultPadding);
+    }
+
+    .nav .nav-right .registerButton {
+        font-size: 0.8rem;
+        width: fit-content;
+    }
+
+    .nav-right .searchInputLogo {
+        display: block;
+    }
+
+    .nav-left .burgerIcon {
+        display: block !important;
+    }
+
+    .content {
+        width: 100% !important;
+    }
+
+    .content .leftCol {
+        position: fixed;
+        width: 80%;
+        left: -100%;
+        margin: 0;
+        background-color: white;
+        padding: 1.5rem 1.5rem;
+        overflow-y: scroll;
+        height: 100%;
+        top: 0px !important;
+        z-index: 2;
+    }
+
+    .content .feed {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .content .feed .feedCol {
+        width: 98vw;
+    }
+
+    .content .feed .feedCol .feedFilters {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .feed .feedCol .feedFilters .typeFilters {
+        line-height: 1rem;
+    }
+
+    .content .feed .feedCol .feedFilters .timeFilters {
+        line-height: 1rem;
+    }
+
+    .content .feed .feedCol .post {
+        width: 100%;
+    }
+
+    .content .feed .feedCol .post .reactionsAndComments {
+        margin: 0.8rem;
+    }
+
+    .rightCol {
+        display: none;
+    }
+
+    footer * {
+        margin: 0.2rem;
+        text-align: center;
+        width: 80%;
+    }
+
+    footer {
+        height: 50vh;
+    }
+}

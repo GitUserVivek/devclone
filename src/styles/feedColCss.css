@@ -1,0 +1,318 @@
+:root {
+  /* --primary: rgb(59, 73, 223);
+    --secondary: rgba(59, 73, 223, 0.1);
+    --body: rgb(245, 245, 245, 1);
+    --borderRadius: 0.5rem;
+    --defaultPadding: 1rem;
+    --defaultBorderColor: rgb(47, 58, 178);
+    --fontSecondary: rgb(64, 64, 64); */
+}
+
+/*   feed part.. */
+.feed {
+  float: left;
+  width: 50%;
+  margin: 0.5rem;
+}
+
+.feedFilters {
+  display: flex;
+  justify-content: space-between;
+  color: var(--fontSecondary);
+}
+
+.feedFilters * {
+  margin: 0.2rem 0px;
+  padding: 0.5rem;
+  border-radius: var(--borderRadius);
+  font-size: large;
+  color: var(--fontSecondary);
+}
+
+.feedFilters .timeFilters * {
+  font-size: medium !important;
+}
+
+.feedFilters .typeFilters *:hover,
+.feedFilters .timeFilters *:hover {
+  background-color: white;
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
+  color: black;
+}
+
+/* POst Part */
+.post {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--borderRadius);
+  border: solid 1px var(--body);
+  background-color: white;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 0 1px var(--fontSecondary);
+}
+
+.post img {
+  border-radius: var(--borderRadius);
+}
+
+.post .info {
+  display: flex;
+  align-items: center;
+}
+
+.post .info img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+
+.post .info > span {
+  height: fit-content;
+  width: 100%;
+  line-height: 1rem;
+}
+
+.post .info span .username {
+  font-size: small;
+  font-weight: bold;
+  color: var(--fontSecondary);
+  border-radius: var(--borderRadius);
+}
+
+.post .info span .username:hover {
+  background-color: var(--body);
+}
+
+.post .info span .postTime {
+  font-size: small;
+}
+
+.post .postTitle {
+  font-size: x-large;
+  margin-left: 2.5rem;
+
+  font-weight: bold;
+}
+
+.post .postTitle:hover {
+  color: rgb(47, 58, 178);
+}
+
+.post .postTags {
+  display: flex;
+  margin-left: 2.5rem;
+}
+
+.post * {
+  cursor: pointer;
+}
+
+.post .postTags .LinkText {
+  font-size: smaller;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border: solid 1px transparent;
+  box-sizing: border-box;
+}
+
+.post .postTags .LinkText:hover {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-decoration: none;
+  border: solid 1px var(--secondary);
+  box-sizing: border-box;
+}
+
+.post .reactionsAndComments {
+  display: flex;
+  margin: 1rem 3rem;
+  justify-content: space-between;
+}
+
+.post .reactionsAndComments * {
+  padding: 0.5rem;
+}
+
+.post .reactionsAndComments span *:hover {
+  background-color: var(--body);
+  border-radius: var(--borderRadius);
+}
+
+.post .reactionsAndComments .save .saveSpan {
+  background-color: lightgray;
+
+  border-radius: var(--borderRadius);
+}
+
+.post .reactionsAndComments .save .saveSpan:hover {
+  background-color: rgb(154, 152, 152);
+}
+
+/* .post  */
+
+/*  right col part */
+.rightCol {
+  float: left;
+  width: 25%;
+  margin: 1rem;
+  height: 1340px;
+}
+
+/*  */
+
+/* login component */
+.loginComponent {
+  background-color: white;
+  margin: var(--defaultMargin);
+  padding: 2rem;
+  border-radius: var(--borderRadius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+}
+
+.loginComponent .LinkText {
+  display: flex;
+  justify-content: center;
+  padding: var(--defaultPadding);
+  margin: 0.3rem;
+}
+
+.loginComponent .descLogin {
+  padding: var(--defaultPadding);
+}
+
+.loginComponent span {
+  color: black;
+  padding: 0.5rem;
+}
+
+.loginComponent .descLogin span {
+  color: var(--primary);
+}
+
+.loginComponent .Apple_login * {
+  margin: 0rem;
+  background-color: black !important;
+  color: white !important;
+  text-decoration: none;
+}
+
+.loginComponent .Apple_login *:hover {
+  background-color: #1b1b1b !important;
+  color: white !important;
+}
+
+.loginComponent .Form_login * {
+  margin: 0rem;
+  background-color: #0a3e4a !important;
+  text-decoration: none;
+  color: white !important;
+}
+
+.loginComponent .Form_login *:hover {
+  background-color: #05313b !important;
+  color: white !important;
+}
+
+.loginComponent .Github_login * {
+  margin: 0rem;
+  background-color: #1b1b1b !important;
+  text-decoration: none;
+  color: white !important;
+}
+
+.loginComponent .Github_login *:hover {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+.loginComponent .tweeter_login * {
+  margin: 0rem;
+  background-color: #0096f2 !important;
+  text-decoration: none;
+
+  color: white !important;
+}
+
+.loginComponent .tweeter_login *:hover {
+  background-color: #1da1f2 !important;
+  color: white !important;
+}
+
+.loginComponent .loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.loginComponent .loginForm b {
+  color: var(--fontSecondary);
+}
+
+.defaultInput {
+  background-color: var(--secondary);
+  border: solid 1px lightgrey;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: var(--borderRadius);
+  margin: 0.5rem 0rem;
+}
+
+.loginComponent span[name="sectionLink"] {
+  font-size: small;
+  color: var(--fontSecondary);
+}
+
+.loginComponent .loginForm button {
+  background-color: var(--primary);
+  border: none;
+  padding: var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.loginComponent .loginForm span[name="forgot"] {
+  text-align: center;
+  color: var(--primary);
+  margin: var(--defaultMargin);
+}
+
+/* Skeleton */
+
+.info span[aria-busy="true"] {
+  height: 2.5rem;
+  width: 2.5rem !important;
+  padding: 0 !important;
+  margin: 0px !important;
+}
+
+.skeletonImage {
+  height: 15rem;
+}
+
+.skeletonCircle {
+  height: 2.5rem;
+  width: 2.5rem !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin-left: 1rem;
+}
+
+.skeletonLine {
+  height: 1rem;
+  margin-left: 2rem;
+  width: 15rem !important;
+}

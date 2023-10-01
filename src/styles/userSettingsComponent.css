@@ -1,0 +1,104 @@
+.useSettingPage {
+  width: 70rem;
+  padding: var(--defaultPadding);
+  margin: var(--defaultMargin);
+}
+.useSettingPage span {
+  font-size: xx-large;
+  font-weight: bold;
+}
+.useSettingPage span a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.useSettingPage .settingComponent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settingMenu {
+  flex: 2.5;
+  text-decoration: none;
+}
+.settingMenu a {
+  width: 90%;
+  text-decoration: none !important;
+}
+.settingContent {
+  flex: 7.5;
+}
+
+.card {
+  background: white;
+  padding: var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  margin: var(--defaultMargin);
+}
+.card .filledButtonWithIcon {
+  color: white;
+  padding: 0.6rem var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15rem;
+  margin: 5px;
+  font-size: medium;
+}
+.filledButtonWithIcon img {
+  height: 25px;
+  padding: 0 20px 0 0;
+}
+
+.profilePicUploader .inputWithLable {
+  display: flex;
+  flex-direction: row;
+  padding: var(--defaultPadding);
+  align-items: center;
+}
+.profilePicUploader .inputWithLable button {
+  background-color: var(--buttonBackGray);
+  margin: 0 var(--defaultMargin);
+  height: fit-content;
+  width: fit-content;
+  padding: var(--defaultPadding);
+  border-radius: var(--borderRadius);
+  border: none;
+  color: var(--fontSecondary);
+  font-weight: bold;
+  outline: none;
+}
+.profilePicUploader .inputWithLable img {
+  display: block;
+  height: 5rem;
+  border-radius: 50%;
+  margin-right: var(--defaultMargin);
+  width: 5rem;
+  background-color: rebeccapurple;
+}
+
+.profilePicUploader .inputWithLable .pic_name {
+  font-size: medium;
+  font-weight: 500;
+}
+.brandColor_picker {
+  display: flex;
+  flex-direction: column;
+  padding: var(--defaultPadding);
+}
+.brandColor_picker span:nth-last-child(1) {
+  display: flex;
+  align-items: center;
+}
+.brandColor_picker input {
+  margin: var(--defaultMargin);
+  height: 3rem;
+  width: 3rem;
+}
+.brandColor_picker .brandColor {
+  font-size: medium;
+  font-weight: 500;
+  margin: 0 var(--defaultMargin);
+}
