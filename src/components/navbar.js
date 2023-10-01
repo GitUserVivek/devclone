@@ -412,7 +412,7 @@ let CreatePost = () => {
   let userId = newPost.userId;
   useEffect(() => {
     newPost.userId = state.user?._id;
-  }, [state, newPost, setState]);
+  }, [state, state.loginStatus, newPost, setState]);
   let ref = useRef("file");
   return (
     <>
