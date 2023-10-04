@@ -177,11 +177,12 @@ let likeCommentUnLike = async ({ postId, commentId, username }) => {
   console.log("Like on Comment  successful..");
   return res.data.msg;
 };
-let replyComment = async ({ postId, reply, commentId, userId }) => {
+let replyComment = async ({ postId, reply, commentId, username, userId }) => {
   let res = await axios.post(replyCommentPostUrl, {
     postId,
     commentId,
     reply,
+    username,
     userId,
   });
 

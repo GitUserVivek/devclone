@@ -368,11 +368,13 @@ let CommentWriter = ({
             <FilledButton
               callEvent={async () => {
                 let userId = state?.user?._id;
+                let username = state?.user?.username;
                 if (isReply) {
                   let updatedComment = await replyComment({
                     postId: post._id,
                     reply: userComment,
                     commentId,
+                    username,
                     userId,
                   });
                   console.log({ updatedComment });
