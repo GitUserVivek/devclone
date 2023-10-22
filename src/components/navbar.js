@@ -1,10 +1,11 @@
 import { notification, devLogo, search } from "./utils/images";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import tryLogin, { postPost, scrollToTop, tryRegister } from "./utils/apiCalls";
 import Cookies from "js-cookie";
 import AppContext from "./context/appContext";
 import { Button, FilledButton, LinkText, UserProfilePhoto } from "./components";
+import JoditEditor from "jodit-react";
 
 const NavBar = () => {
   let { state, setState } = useContext(AppContext);
@@ -59,7 +60,7 @@ const NavBar = () => {
                   <span
                     className="LinkText"
                     onClick={() => {
-                      navigateTo("/user/" + state.user.username);
+                      navigateTo("/user/" + state.user._id);
                       setOpenMenue(!openMenue);
                     }}
                   >
@@ -414,6 +415,35 @@ let CreatePost = () => {
     userId: null,
   });
   let userId = state.user?._id;
+
+  let editorConfigs = useMemo(() => {
+    return {
+      toolbarButtonSize: "middle",
+      buttons: [
+        "bold",
+        "strikethrough",
+        "underline",
+        "italic",
+        "ul",
+        "ol",
+        "indent",
+        "font",
+        "fontsize",
+
+        "image",
+        "table",
+        "link",
+
+        "align",
+
+        "hr",
+      ],
+
+      events: {},
+      textIcons: false,
+    };
+  }, []);
+
   useEffect(() => {
     newPost.userId = state.user?._id;
     console.log(state);
@@ -507,25 +537,16 @@ let CreatePost = () => {
                     placeholder="Add upto 4 tags.. saperated by spaces"
                   />
                 </span>
-                <div className="editorTab">
-                  <div className="left_pan">
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                    <span className="editorTab_tool"></span>
-                  </div>
-                  <div className="right_pan">
-                    <span className="editorTab_more"></span>
-                  </div>
-                </div>
-                <textarea
+                <JoditEditor
+                  className="blogWriter"
+                  value={newPost.blog}
+                  config={editorConfigs}
+                  onChange={(newContent) => {
+                    console.log({ newContent });
+                    setNewPost({ ...newPost, blog: newContent });
+                  }}
+                />
+                {/* <textarea
                   className="blogWriter"
                   style={{
                     height: "5rem",
@@ -537,7 +558,7 @@ let CreatePost = () => {
                     e.target.style.height = "100px";
                     e.target.style.height = e.target.scrollHeight + "px";
                   }}
-                />
+                /> */}
               </div>
               {/*  */}
               <div className="postGuide">

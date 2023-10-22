@@ -145,7 +145,10 @@ let UserPost = memo(() => {
                   {currentPost.title}
                 </span>
                 <PostTags tags={currentPost.tags} />
-                <span className="singlePostblog"> {currentPost.blog}</span>
+                <span className="singlePostblog">
+                  <div dangerouslySetInnerHTML={{ __html: currentPost.blog }} />
+                  {/* {dangerouslySetInnerHTML()} {currentPost.blog} */}
+                </span>
                 <hr
                   color="lightgray"
                   style={{

@@ -380,6 +380,9 @@ b {
   outline: none;
 }
 
+.blogWriter * {
+  margin: auto !important;
+}
 .editorTab {
   height: 3rem;
   display: flex;

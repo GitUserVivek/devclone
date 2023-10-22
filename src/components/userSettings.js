@@ -39,6 +39,7 @@ let BasicSettings = ({
   let profileUploadRef = useRef();
   let pic_name = useRef();
   let brand_color = useRef();
+  let imagePreview = useRef();
   return (
     <div className="card">
       <h2>User</h2>
@@ -80,16 +81,20 @@ let BasicSettings = ({
             src={
               currentSettings?.profileImage ? currentSettings?.profileImage : ""
             }
+            ref={imagePreview}
             alt="profilePic"
           />
           <input
             type="file"
             hidden
             ref={profileUploadRef}
+            accept="image/*"
             onChange={(e) => {
-              let pic = e.target.files[0];
+              let pic = e.target.files[0]; 
+              const imageUrl = URL.createObjectURL(pic);
+              console.log(imagePreview)
               if (pic) {
-                pic_name.current.innerText = pic.name;
+                pic_name.current.innerText = pic.name; 
                 let reader = new FileReader();
                 let dataUrl = null;
                 reader.onloadend = () => {
