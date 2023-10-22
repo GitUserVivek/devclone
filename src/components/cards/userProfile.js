@@ -19,22 +19,22 @@ let UserProfile = memo(() => {
   let { state } = useContext(AppContext);
   let [user, setUser] = useState({});
   let location = useLocation();
-  let username = location.pathname.split("/")[2];
+  let userId = location.pathname.split("/")[2];
   let [myProfile, setMyProfile] = useState(false);
   let [skeleton, setSkeleton] = useState([1, 2, 3, 4, 5]);
   useEffect(() => {
     async function getData() {
-      let gotUser = await axios.post(getSingleUsersUrl, { username });
+      let gotUser = await axios.post(getSingleUsersUrl, { userId });
       if (gotUser.data.statusCode === 200) {
         console.log({ gotUser });
         gotUser.data.user["posts"] = await getUserPosts({
-          username,
+          userId,
           id: gotUser.data.user._id + "",
         });
         // eslint-disable-next-line
         user = gotUser?.data?.user;
         setUser({ ...user });
-        if (user?.username === state?.user?.username) setMyProfile(true);
+        if (user?.id === state?.user?.userId) setMyProfile(true);
         else setMyProfile(false);
       } else {
         setUser(gotUser.data);

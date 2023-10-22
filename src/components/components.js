@@ -192,7 +192,7 @@ const UserInfo = ({ user, openUserProfileByClick, time }) => {
       <img alt="Profile" src={user.profileImage || userPhoto} />
       <NavLink
         className={"noDecoratioin"}
-        to={openUserProfileByClick ? "/user/" + user.username : ""}
+        to={openUserProfileByClick ? "/user/" + user.id : ""}
       >
         <span>
           {/* <span className="username"> {user.username}</span> */}
