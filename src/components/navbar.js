@@ -446,8 +446,7 @@ let CreatePost = () => {
 
   useEffect(() => {
     newPost.userId = state.user?._id;
-    console.log(state);
-    console.log(userId);
+    console.log(newPost.tags);
   }, [state, state.loginStatus, state?.currentPath, newPost.userId]);
   let ref = useRef("file");
   return (
@@ -517,7 +516,11 @@ let CreatePost = () => {
                         #{value}
                         <span
                           onClick={() => {
+                            console.log(index);
                             newPost.tags.splice(index, 1);
+                            setNewPost({
+                              ...newPost,
+                            });
                           }}
                         >
                           X
@@ -525,17 +528,21 @@ let CreatePost = () => {
                       </span>
                     );
                   })}
-                  <input
-                    type="text"
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === "Space") {
-                        newPost.tags.push(e.target.value);
-                        setNewPost({ ...newPost });
-                        e.currentTarget.value = "";
-                      }
-                    }}
-                    placeholder="Add upto 4 tags.. saperated by spaces"
-                  />
+                  {newPost.tags.length < 4 ? (
+                    <input
+                      type="text"
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === "Space") {
+                          newPost.tags.push(e.target.value);
+                          setNewPost({ ...newPost });
+                          e.currentTarget.value = "";
+                        }
+                      }}
+                      placeholder="Add upto 4 tags.. saperated by spaces"
+                    />
+                  ) : (
+                    ""
+                  )}
                 </span>
                 <JoditEditor
                   className="blogWriter"

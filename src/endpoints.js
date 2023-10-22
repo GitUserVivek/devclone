@@ -1,10 +1,10 @@
-let localhost = "http://localhost:5000";
+// let localhost = "http://localhost:5000";
 
-// let remotehost = "https://thedevbackend.cyclic.cloud/";
+let remotehost = "https://thedevbackend.cyclic.cloud/";
 // let localLanHost = "http://192.168.0.194:5000";
-let host = localhost;
+// let host = localhost;
 // let host = localLanHost;
-// let host = remotehost;
+let host = remotehost;
 
 const loginUrl = `${host}/login`;
 const registerUrl = `${host}/register`;
