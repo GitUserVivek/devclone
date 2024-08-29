@@ -253,16 +253,15 @@ let SingleCommentComponent = ({
                   let updatedComment;
                   isReply
                     ? (updatedComment = await deleteReplyComment({
-                        commentId: comment?.id,
-                        replyId: currentComment?.replyId,
-                        postId,
-                      }))
+                      commentId: comment?.id,
+                      replyId: currentComment?.replyId,
+                      postId,
+                    }))
                     : (updatedComment = await deleteComment({
-                        commentId: currentComment?.id,
-                        postId,
-                        username,
-                      }));
-                  console.log("this", updatedComment?.data?.comments);
+                      commentId: currentComment?.id,
+                      postId,
+                      username,
+                    }));
                   setAllComments(updatedComment?.data?.comments);
                 }}
               >
@@ -398,7 +397,7 @@ let CommentWriter = ({
               text="Submit"
             />
             <BorderButton
-              callEvent={() => {}}
+              callEvent={() => { }}
               active={userComment ? true : false}
               path=""
               text="Preview"
@@ -428,7 +427,7 @@ const CommentsComponent = ({ post }) => {
     <span className="commentsSection">
       <span className="commentsHeader">
         <span> Discussion </span>
-        <BorderButton callEvent={() => {}} path="" text="Subscribe" />
+        <BorderButton callEvent={() => { }} path="" text="Subscribe" />
       </span>
       <span className="commentsBody">
         <CommentWriter post={post} setAllComments={setAllComments} />

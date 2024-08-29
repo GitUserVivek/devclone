@@ -219,8 +219,8 @@ const Login = () => {
                     targetElement.innerText = status?.msg
                       ? status.msg
                       : status.error.length > 1
-                      ? "All Fields are required !"
-                      : status.error[0].msg;
+                        ? "All Fields are required !"
+                        : status.error[0].msg;
                     targetElement.style.display = "block";
                   } else {
                     targetElement.style.display = "none";
@@ -231,11 +231,12 @@ const Login = () => {
               required
             />
             <span>
-              <input type="checkbox" style={{ margin:"10px" }} name="rememberme" id="rememberme" />
+              <input type="checkbox" style={{ margin: "10px" }} name="rememberme" id="rememberme" />
               Remember me
             </span>
             <button
               type="button"
+              style={{ cursor: "pointer" }}
               onClick={async () => {
                 let status = await tryLogin({
                   state,
@@ -252,8 +253,8 @@ const Login = () => {
                   targetElement.innerText = status?.msg
                     ? status.msg
                     : status.error.length > 1
-                    ? "All Fields are required !"
-                    : status.error[0].msg;
+                      ? "All Fields are required !"
+                      : status.error[0].msg;
                   targetElement.style.display = "block";
                 } else {
                   targetElement.style.display = "none";
@@ -373,8 +374,8 @@ const Register = () => {
                 targetElement.innerText = status?.msg
                   ? status.msg
                   : status.error.length > 1
-                  ? "All Fields are required !"
-                  : status.error[0].msg;
+                    ? "All Fields are required !"
+                    : status.error[0].msg;
                 targetElement.style.display = "block";
               } else {
                 targetElement.style.display = "none";
@@ -458,7 +459,6 @@ let CreatePost = () => {
               <div className="postWorkspace">
                 <button
                   className="addCoverImageButton"
-                  onClick={() => console.log(ref.current.click())}
                 >
                   {newPost.coverImage
                     ? "Change cover Image"
@@ -504,7 +504,7 @@ let CreatePost = () => {
                     setNewPost({ ...newPost });
                     e.target.style.height = "100px";
                     e.target.style.height = e.target.scrollHeight + "px";
-                    console.log({ newPost });
+                    // console.log({ newPost });
                   }}
                   placeholder="New Post Title Here.."
                   className="titleInput"
