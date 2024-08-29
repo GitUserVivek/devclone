@@ -231,7 +231,7 @@ const Login = () => {
               required
             />
             <span>
-              <input type="checkbox" name="rememberme" id="rememberme" />
+              <input type="checkbox" style={{ margin:"10px" }} name="rememberme" id="rememberme" />
               Remember me
             </span>
             <button
