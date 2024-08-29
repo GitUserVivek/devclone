@@ -1,6 +1,7 @@
-// let localhost = "http://localhost:5000";
+let localhost = "http://localhost:5000";
 
-let remotehost = "https://thedevbackend.cyclic.cloud/";
+// let remotehost = "https://thedevbackend.cyclic.cloud/";
+let remotehost = "https://thedevcomm-backend.onrender.com";
 // let localLanHost = "http://192.168.0.194:5000";
 // let host = localhost;
 // let host = localLanHost;

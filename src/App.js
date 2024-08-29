@@ -37,7 +37,6 @@ let App = memo(() => {
                   loginStatus: true,
                   user: userData.data,
                 });
-              } else {
               }
             });
           } catch (err) {
