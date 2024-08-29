@@ -5,6 +5,9 @@
 @import url(mediaQuery.css);
 @import url(userSettingsComponent.css);
 
+iframe{
+  display: none;
+}
 * {
   margin: 0;
   padding: 0;

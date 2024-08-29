@@ -236,7 +236,6 @@ const Login = () => {
             </span>
             <button
               type="button"
-              style={{ cursor: "pointer" }}
               onClick={async () => {
                 let status = await tryLogin({
                   state,
@@ -261,6 +260,7 @@ const Login = () => {
                   navigateTo("/");
                 }
               }}
+              style={{ cursor: "pointer" }}
             >
               Continue
             </button>
@@ -484,10 +484,10 @@ let CreatePost = () => {
                       let reader = new FileReader();
                       reader.onloadend = () => {
                         const dataUrl = reader.result;
-                        console.log({ dataUrl });
+                        // console.log({ dataUrl });
                         newPost.coverImage = dataUrl;
                         setNewPost({ ...newPost });
-                        console.log({ newPost2: newPost });
+                        // console.log({ newPost2: newPost });
                       };
                       reader.readAsDataURL(file);
                     }
@@ -549,7 +549,7 @@ let CreatePost = () => {
                   value={newPost.blog}
                   config={editorConfigs}
                   onChange={(newContent) => {
-                    console.log({ newContent });
+                    // console.log({ newContent });
                     setNewPost({ ...newPost, blog: newContent });
                   }}
                 />

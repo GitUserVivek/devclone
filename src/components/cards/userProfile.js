@@ -26,7 +26,7 @@ let UserProfile = memo(() => {
     async function getData() {
       let gotUser = await axios.post(getSingleUsersUrl, { userId });
       if (gotUser.data.statusCode === 200) {
-        console.log({ gotUser });
+        // console.log({ gotUser });
         gotUser.data.user["posts"] = await getUserPosts({
           userId,
           id: gotUser.data.user._id + "",
