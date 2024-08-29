@@ -219,8 +219,8 @@ const Login = () => {
                     targetElement.innerText = status?.msg
                       ? status.msg
                       : status.error.length > 1
-                      ? "All Fields are required !"
-                      : status.error[0].msg;
+                        ? "All Fields are required !"
+                        : status.error[0].msg;
                     targetElement.style.display = "block";
                   } else {
                     targetElement.style.display = "none";
@@ -252,14 +252,15 @@ const Login = () => {
                   targetElement.innerText = status?.msg
                     ? status.msg
                     : status.error.length > 1
-                    ? "All Fields are required !"
-                    : status.error[0].msg;
+                      ? "All Fields are required !"
+                      : status.error[0].msg;
                   targetElement.style.display = "block";
                 } else {
                   targetElement.style.display = "none";
                   navigateTo("/");
                 }
               }}
+              style={{ cursor: "pointer" }}
             >
               Continue
             </button>
@@ -373,8 +374,8 @@ const Register = () => {
                 targetElement.innerText = status?.msg
                   ? status.msg
                   : status.error.length > 1
-                  ? "All Fields are required !"
-                  : status.error[0].msg;
+                    ? "All Fields are required !"
+                    : status.error[0].msg;
                 targetElement.style.display = "block";
               } else {
                 targetElement.style.display = "none";
@@ -484,10 +485,10 @@ let CreatePost = () => {
                       let reader = new FileReader();
                       reader.onloadend = () => {
                         const dataUrl = reader.result;
-                        console.log({ dataUrl });
+                        // console.log({ dataUrl });
                         newPost.coverImage = dataUrl;
                         setNewPost({ ...newPost });
-                        console.log({ newPost2: newPost });
+                        // console.log({ newPost2: newPost });
                       };
                       reader.readAsDataURL(file);
                     }
@@ -504,7 +505,7 @@ let CreatePost = () => {
                     setNewPost({ ...newPost });
                     e.target.style.height = "100px";
                     e.target.style.height = e.target.scrollHeight + "px";
-                    console.log({ newPost });
+                    // console.log({ newPost });
                   }}
                   placeholder="New Post Title Here.."
                   className="titleInput"
@@ -549,7 +550,7 @@ let CreatePost = () => {
                   value={newPost.blog}
                   config={editorConfigs}
                   onChange={(newContent) => {
-                    console.log({ newContent });
+                    // console.log({ newContent });
                     setNewPost({ ...newPost, blog: newContent });
                   }}
                 />
