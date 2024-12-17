@@ -7,7 +7,7 @@ import Footer from "./footer";
 import { CreatePost, Login, Register } from "./navbar";
 import FeedCol from "./cards/feedColCards";
 import UserSettings from "./userSettings";
-import PaymentComponent from "./cards/PaymentComponent";
+// import PaymentComponent from "./cards/PaymentComponent";
 let Body = () => {
   let { state } = useContext(AppContext);
   return (
@@ -21,7 +21,7 @@ let Body = () => {
         <Route path="user/:username" element={<UserProfile />} />
         <Route path="user/:username/:postId" element={<UserPost />} />
         <Route path="tags/:tagname" element={<FeedCol isTags={true} />} />
-        <Route path="payment" element={<PaymentComponent />} />
+        {/* <Route path="payment" element={<PaymentComponent />} /> */}
       </Routes>
       {state.currentPath !== "/new" ? <Footer /> : null}
     </div>
